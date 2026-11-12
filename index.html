@@ -58,8 +58,9 @@ nav .btn{padding:12px 22px}
 @media(max-width:760px){.hero .bg{background-image:url("https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QfVr-QXjGvAe5k8hVT0M6p27YSkvctPx9zRJfFt8hObooOp6hFgfz6EOJnx4spTedQcY7ke5Cjh9AQs6SsfaJ_6lZ50EHw-rAPZW3orI8t-cLAbkiXfCINwwZ6ZurHlCFWQyqSUw=w1200");background-position:center 40%}}
 @keyframes zoom{to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,11,.55) 0%,rgba(14,13,11,.05) 30%,rgba(14,13,11,.25) 58%,rgba(14,13,11,.96) 100%)}
-.hero .w{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:110px;padding-bottom:min(96px,11vh)}
-.hero h1{font-size:clamp(50px,min(9vw,13vh),146px);line-height:.94;margin:22px 0 26px;max-width:12ch}
+.hero .w{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:160px;padding-bottom:min(96px,11vh)}
+.hero h1{font-size:clamp(48px,min(8.4vw,12vh),140px);line-height:1.02;margin:20px 0 24px;max-width:12ch}
+.hw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}.hw>span{display:inline-block;transform:translateY(110%);transition:transform 1.4s var(--ease)}.hero.go .hw>span{transform:none}
 .hero .lede{font-size:clamp(17px,1.5vw,19px);max-width:40ch;color:#D6CEBF}
 .hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:42px}
 .hero .meta{position:absolute;right:max(24px,env(safe-area-inset-right));bottom:96px;z-index:2;text-align:right;font-size:11px;letter-spacing:.26em;text-transform:uppercase;line-height:2.3;color:var(--sivo)}
@@ -207,6 +208,42 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
 .mob .btn{flex:1;padding:15px 8px}
 @media(max-width:860px){.mob{display:flex}}
 
+
+/* dinamika */
+.progress{position:fixed;top:0;left:0;right:0;height:2px;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--zlato),var(--zlato-s));z-index:80;pointer-events:none}
+.marq{overflow:hidden;border-bottom:1px solid var(--crta2);padding:30px 0;background:var(--bg)}
+.marq .tr{display:flex;width:max-content;animation:mq 46s linear infinite}
+.marq span{font-family:var(--disp);font-style:italic;font-weight:300;font-size:clamp(42px,6.4vw,92px);line-height:1.05;color:transparent;-webkit-text-stroke:1px rgba(201,164,92,.6);padding-right:.45em;white-space:nowrap}
+.marq span:nth-child(3n+2){color:var(--zlato-s);-webkit-text-stroke:0}
+.marq span.pika{color:var(--zlato);-webkit-text-stroke:0;font-style:normal;font-size:clamp(20px,2vw,28px);align-self:center}
+@keyframes mq{to{transform:translateX(-50%)}}
+.vina .foto img{position:absolute;inset:0;opacity:0;transform:scale(1.08);transition:opacity 1.1s var(--ease),transform 7s var(--ease)}
+.vina .foto img.act{opacity:1;transform:scale(1)}
+.vina .foto .stev{position:absolute;left:32px;bottom:28px;z-index:2;font-family:var(--disp);font-weight:300;font-size:120px;line-height:.8;color:rgba(246,240,228,.9);transition:opacity .4s}
+.vina .foto .stev small{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--zlato);margin-top:14px}
+.seznam li{cursor:pointer}
+.seznam li b{transition:color .4s,transform .6s var(--ease);display:inline-block;transform-origin:left}
+.seznam li.act b{color:var(--zlato-s);transform:translateX(10px)}
+.seznam li::before{content:"";grid-column:1/-1;grid-row:1;align-self:end;height:1px;background:var(--zlato);transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease);margin-top:-1px}
+.citat blockquote .bw{opacity:.16;transition:opacity .5s}
+.citat blockquote .bw.lit{opacity:1}
+.grow{clip-path:inset(var(--c,14%) var(--c,14%) var(--c,14%) var(--c,14%))}
+.hs-wrap{position:relative;padding:0;height:320vh}
+.hs-stick{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:52px}
+.hs-track{display:flex;gap:22px;padding:0 max(24px,calc((100vw - 1280px)/2 + 24px));will-change:transform}
+.hs-track figure{position:relative;overflow:hidden;flex:0 0 min(31vw,440px);height:min(58vh,600px)}
+.hs-track figure img{transition:transform 1.4s var(--ease)}
+.hs-track figure:hover img{transform:scale(1.06)}
+.hs-track figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,11,0) 40%,rgba(14,13,11,.92))}
+.hs-track figcaption{position:absolute;left:28px;right:28px;bottom:28px;z-index:2}
+.hs-track small{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--zlato)}
+.hs-track b{display:block;font-family:var(--disp);font-weight:300;font-size:34px;color:#F6F0E4;line-height:1.05;margin:10px 0 8px}
+.hs-track span{font-size:14.5px;color:#C9C0B0;line-height:1.55;display:block}
+.hs-track .st{position:absolute;top:22px;right:26px;z-index:2;font-family:var(--disp);font-style:italic;font-size:22px;color:var(--zlato-s)}
+.hs-bar{margin:0 max(24px,calc((100vw - 1280px)/2 + 24px));height:1px;background:var(--crta2);position:relative}
+.hs-bar i{position:absolute;inset:0;background:var(--zlato);transform-origin:left;transform:scaleX(0)}
+@media(max-width:1000px){.hs-wrap{height:auto;padding:96px 0}.hs-stick{position:static;height:auto;gap:36px}.hs-track{overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important;scrollbar-width:none}.hs-track::-webkit-scrollbar{display:none}.hs-track figure{flex:0 0 78vw;height:auto;aspect-ratio:3/4;scroll-snap-align:center}.hs-track b{font-size:27px}.hs-bar{display:none}.vina .foto .stev{font-size:84px;left:22px}}
+
 /* gibanje */
 .pr{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
 .pr.on{opacity:1;transform:none}
@@ -220,6 +257,7 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
 </head>
 <body>
 
+<div class="progress" id="prog"></div>
 <div class="trak"><b>Predogled</b> · brezplačen osnutek, pripravil Spletni Atelje · fotografije zamenjamo z vašimi</div>
 
 <nav id="nav"><div class="w">
@@ -232,13 +270,15 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
   <div class="bg"></div>
   <div class="w">
     <div class="nad pr">Vinogradništvo in turistična kmetija</div>
-    <h1 class="pr d1">Pet generacij <em>na haloškem slemenu</em></h1>
+    <h1 id="h1">Pet generacij <em>na haloškem slemenu</em></h1>
     <p class="lede pr d2">Bela vina z ene najboljših leg vzhodnih Haloz, domača miza in sobe z razgledom na vinograde, ki segajo čez mejo.</p>
     <div class="cta pr d3"><a class="btn btn-z" href="#rezervacija">Rezervirajte bivanje <span class="ar"></span></a><a class="btn" href="#vina">Naša vina</a></div>
   </div>
   <div class="meta"><b>Drenovec 7</b> · Zavrč<br>Vzhodne Haloze<br>Ob meji s Hrvaško</div>
   <div class="skrol" aria-hidden="true"></div>
 </header>
+
+<div class="marq" aria-hidden="true"><div class="tr"><span>Šipon</span><span class="pika">✦</span><span>Haloze</span><span class="pika">✦</span><span>Laški rizling</span><span class="pika">✦</span><span>Pet generacij</span><span class="pika">✦</span><span>Sauvignon</span><span class="pika">✦</span><span>Drenovec</span><span class="pika">✦</span><span>Rumeni muškat</span><span class="pika">✦</span><span>Zavrč</span><span class="pika">✦</span><span>Šipon</span><span class="pika">✦</span><span>Haloze</span><span class="pika">✦</span><span>Laški rizling</span><span class="pika">✦</span><span>Pet generacij</span><span class="pika">✦</span><span>Sauvignon</span><span class="pika">✦</span><span>Drenovec</span><span class="pika">✦</span><span>Rumeni muškat</span><span class="pika">✦</span><span>Zavrč</span><span class="pika">✦</span></div></div>
 
 <section id="zgodba"><div class="w uvod">
   <div>
@@ -247,9 +287,9 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
     <p class="t pr">Vinogradništvo in vinarstvo se v družini Pungračič prenaša že skozi pet generacij. Obdelujemo ene izmed najboljših vinorodnih leg, naši vinogradi pa ležijo na obeh straneh meje med Slovenijo in Hrvaško.</p>
     <p class="t pr">Pridelujemo samo bela vina. V vsakem želimo ujeti bogate okuse grozdja, ki dozori na naših trtah, in jih postreči ob domači haloški mizi.</p>
     <div class="dejstva pr">
-      <div><b>5</b><span>generacij</span></div>
-      <div><b>14 ha</b><span>vinogradov</span></div>
-      <div><b>60</b><span>gostov za mizo</span></div>
+      <div><b data-n="5">0</b><span>generacij</span></div>
+      <div><b data-n="14" data-s=" ha">0</b><span>vinogradov</span></div>
+      <div><b data-n="60">0</b><span>gostov za mizo</span></div>
     </div>
   </div>
   <div class="par">
@@ -259,16 +299,16 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
 </div></section>
 
 <section id="vina" class="vina"><div class="vina-g">
-  <figure class="foto zav"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RzsY4OJJIffvkVutbWGw_AJ87mYZknv9B95dohqN_g9uRgSd_sA1L4Ny4hIofd7QOM7vZcFgfOi0jkVvnRWLi3viZRuVbbb2q_RJ7XNCJjGcmZHAerTkn5RvwrCiPhmH11FuRo=w1600" alt="Klet s sodi"></figure>
+  <figure class="foto" id="vfoto"><img loading="lazy" class="act" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RzsY4OJJIffvkVutbWGw_AJ87mYZknv9B95dohqN_g9uRgSd_sA1L4Ny4hIofd7QOM7vZcFgfOi0jkVvnRWLi3viZRuVbbb2q_RJ7XNCJjGcmZHAerTkn5RvwrCiPhmH11FuRo=w1600" alt="Klet s sodi"><img loading="lazy" class="" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SkkLLPkQwBnGkEJARWUzOH7Y71GABi8M1tzauX7A42jslmr2Ddy-8qKG2nz-B_9S5NSCJ7vDD7oWDtxuAU8i12q8toeFyX5sQtm8RAqNTUhVATyi4W3OuOfhTWqA_StUpEY17H=w1600" alt="Vinska klet"><img loading="lazy" class="" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QJUaeKRKURoVB-2fnMxuCVTq6tooXzCPVghQ9jkocRo7BNAIAgsuNYufo7VGV3W3cO0oPZCZn4IsCmpkUAQFuQs0r7KFQyiAeBc-p9cwdmmWu-IwoecNzY6uDjeWawzgah3pcpog=w1600" alt="Inox posode"><img loading="lazy" class="" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R7jon5d6OEnsIzmUUa3BeyPBKiWsTnYVJdhje2HdNAtWEEaktK2e393FutpEW7Vaib6gkKEgV3Wq1GAj4xHUYnnfrClqfO3jc1Y4fidpBMEbjC0vq-6ZRKgKTNHt4su5SfJc94sQ=w1600" alt="Točilnica"><div class="stev" id="vst">01<small>Šipon</small></div></figure>
   <div class="vs">
     <div class="nad pr">V kleti</div>
     <h2 class="pr" style="margin-top:26px">Samo <em>bela vina</em></h2>
     <p class="opis pr">Pod opečnim obokom zorijo vina v lesenih sodih. Degustacijo pripravimo po predhodni najavi, za dva ali za skupino. Vino lahko kupite tudi za domov.</p>
     <ul class="seznam">
-      <li class="pr"><b>Šipon</b><i>Primer</i><span>Haloška klasika, sveže kisline</span></li>
-      <li class="pr"><b>Laški rizling</b><i>Primer</i><span>Lahko, pitno vino za vsak dan</span></li>
-      <li class="pr"><b>Sauvignon</b><i>Primer</i><span>Aromatičen, s sadnimi notami</span></li>
-      <li class="pr"><b>Rumeni muškat</b><i>Primer</i><span>Dišeče vino za sladico</span></li>
+      <li class="pr act" data-i="0"><b>Šipon</b><i>Primer</i><span>Haloška klasika, sveže kisline</span></li>
+      <li class="pr" data-i="1"><b>Laški rizling</b><i>Primer</i><span>Lahko, pitno vino za vsak dan</span></li>
+      <li class="pr" data-i="2"><b>Sauvignon</b><i>Primer</i><span>Aromatičen, s sadnimi notami</span></li>
+      <li class="pr" data-i="3"><b>Rumeni muškat</b><i>Primer</i><span>Dišeče vino za sladico</span></li>
     </ul>
     <p class="op pr">Seznam je primer. Vpišemo vaša vina, letnike, priznanja in cene.</p>
   </div>
@@ -278,7 +318,7 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
   <img id="parallax" loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TaCV1TwpeI18olpUICbTVnW3fv8JEBQanMRi8BQvW8OwXRHMCJobRCyL01MmLL-wjyl58fylnO1CwTYIY4gQABCpzUzHhwZaubMIbchzBREgH61fCbzAC4cxm-vUFm9JGui5k=w2200" alt="">
   <div class="w">
     <div class="nad pr">Družina Pungračič</div>
-    <blockquote class="pr d1">»Z vinsko kraljico je naša klet dobila kanček grajskosti in gosposkosti.«</blockquote>
+    <blockquote id="cit">»Z vinsko kraljico je naša klet dobila kanček grajskosti in gosposkosti.«</blockquote>
   </div>
 </div>
 
@@ -307,7 +347,7 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
     <p class="pr">Pet sob z lastnimi kopalnicami in apartma za šest oseb. Zjutraj zajtrk z domačimi dobrotami, zvečer razgled na vinograde in tišina.</p>
   </div>
   <div class="sobe-g">
-    <figure class="s1 zav"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SqcA_l_JMHT1jN9WjZS8kmFBjlR62TWvJPCDjZeFayovILY0tql37Gog7wfkQZ25aCEB1N8DXjQFbQEXsBBpuJ_eG-mdmvj9wmP8YCZ7i3e7SV20xy1-Dopbh_1pUtCM36A6uPZQ=w1400" alt="Soba"><figcaption>Sobe z lastno kopalnico</figcaption></figure>
+    <figure class="s1 grow" id="grow"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SqcA_l_JMHT1jN9WjZS8kmFBjlR62TWvJPCDjZeFayovILY0tql37Gog7wfkQZ25aCEB1N8DXjQFbQEXsBBpuJ_eG-mdmvj9wmP8YCZ7i3e7SV20xy1-Dopbh_1pUtCM36A6uPZQ=w1400" alt="Soba"><figcaption>Sobe z lastno kopalnico</figcaption></figure>
     <figure class="s2 zav d1"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RzkojWHFw2K8s3Ird96RAwoARRj5Yaz2Bmj8MOhJt6hN1PUwGEnUHLKS85IAS2ImD7GhdeiLSTc-TEbUZXn3X9QVOEjDEmnyM25VuNBG_k2VRUkI_z7dFaS-EM6Wbsh-czNQU=w1100" alt="Soba z razgledom"></figure>
     <figure class="s3 zav d2"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QxMYotgk5mRG7__df-ri8-0UpaPPlH8CAzntyyXMqFZVKg4qjbD4fdnypuZ_spDSCDYEeJNElvZsa3d7_56TOFdJDu-wlpmgsNhOZ05kBGBal60DG12CIxQL5hMAaqcSPc7z0j=w1100" alt="Kopalnica" style="object-position:center 60%"></figure>
   </div>
@@ -325,18 +365,13 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
   </div>
 </div></section>
 
-<section id="dozivetja"><div class="w">
-  <div class="top2">
+<section id="dozivetja" class="hs-wrap"><div class="hs-stick">
+  <div class="w top2">
     <div><div class="nad pr">Doživetja</div><h2 class="pr" style="margin-top:26px">Več kot <em>le prenočišče</em></h2></div>
     <p class="pr">Haloze skozi vse leto: od pomladnih pohodov do jesenske trgatve in zimskih kolin.</p>
   </div>
-  <div class="doz">
-    <figure class="zav"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q4NWuYNs-zXioZozaYYl0LYr1nqEk2d_OWlT2kYCceky8HhjreWPR5CRm-kbAxPFVmV9HIR_SJTm3JPnd2jhMgt4QJZygBMQVvezpb5kIY6T2z5_8yazu8L6VXXoQBvfhCXvEZfQ=w900" alt="Vinogradi"><figcaption><small>Jesen</small><b>Trgatev in koline</b><span>Pridružite se nam pri delu na kmetiji.</span></figcaption></figure>
-    <figure class="zav d1"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qdji9Gqmwl454nk2WxtAcX-pq_C1DjhEdd3pMUzNA5ow4hmp793uTe8tduZW4P2ltjHCvgIn7TJ689QrOSuB4Rj35YGg7BKm8cuL5Kvy9cppsmXB4nAzfOYWddOxDdV63LoWik=w900" alt="Razgled"><figcaption><small>Vse leto</small><b>Pohodi in kolo</b><span>Po haloških slemenih z razgledi.</span></figcaption></figure>
-    <figure class="zav d2"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SUlWv7ICwsmb8MAhgxZCrFb4KkSkDr4ptkGtKGgba_UFi9WY4DLL7SMalr4oVUEWqLWzYCK_5AA9n6SFz3hrz6v4wNeiXX6f2pPKZimLc9ZciIuzDSYMsyBZog8HJQV4FrdhX6=w900" alt="Kozarec vina" style="object-position:center 65%"><figcaption><small>Po najavi</small><b>Degustacija</b><span>V kleti, za dva ali za skupino.</span></figcaption></figure>
-    <figure class="zav d3"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tybq4CpZJb53a46t0ZxScne3tSL_MdqriGL5o-LXSD5mkrix0vUCW5VHZlJCwl8tVUqQw9y-a5LUiQLdToS8wN0DDY64e9rxmxyuLWiHaBhulYXMzNeG9hBAB34zA11yiDs-Sg=w900" alt="Terasa"><figcaption><small>Po dogovoru</small><b>Praznovanja</b><span>Za skupine do 60 gostov.</span></figcaption></figure>
-  </div>
-  <p class="okolica pr">V bližnji okolici so tudi golf, savna in kopališče.</p>
+  <div class="hs-track" id="track"><figure><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q4NWuYNs-zXioZozaYYl0LYr1nqEk2d_OWlT2kYCceky8HhjreWPR5CRm-kbAxPFVmV9HIR_SJTm3JPnd2jhMgt4QJZygBMQVvezpb5kIY6T2z5_8yazu8L6VXXoQBvfhCXvEZfQ=w1000" alt="Trgatev in koline" style=""><span class="st">01</span><figcaption><small>Jesen</small><b>Trgatev in koline</b><span>Pridružite se nam pri delu na kmetiji.</span></figcaption></figure><figure><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qdji9Gqmwl454nk2WxtAcX-pq_C1DjhEdd3pMUzNA5ow4hmp793uTe8tduZW4P2ltjHCvgIn7TJ689QrOSuB4Rj35YGg7BKm8cuL5Kvy9cppsmXB4nAzfOYWddOxDdV63LoWik=w1000" alt="Pohodi in kolo" style=""><span class="st">02</span><figcaption><small>Vse leto</small><b>Pohodi in kolo</b><span>Po haloških slemenih z razgledi daleč čez mejo.</span></figcaption></figure><figure><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SUlWv7ICwsmb8MAhgxZCrFb4KkSkDr4ptkGtKGgba_UFi9WY4DLL7SMalr4oVUEWqLWzYCK_5AA9n6SFz3hrz6v4wNeiXX6f2pPKZimLc9ZciIuzDSYMsyBZog8HJQV4FrdhX6=w1000" alt="Degustacija" style="object-position:center 65%"><span class="st">03</span><figcaption><small>Po najavi</small><b>Degustacija</b><span>V kleti, za dva ali za skupino.</span></figcaption></figure><figure><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tybq4CpZJb53a46t0ZxScne3tSL_MdqriGL5o-LXSD5mkrix0vUCW5VHZlJCwl8tVUqQw9y-a5LUiQLdToS8wN0DDY64e9rxmxyuLWiHaBhulYXMzNeG9hBAB34zA11yiDs-Sg=w1000" alt="Praznovanja" style=""><span class="st">04</span><figcaption><small>Po dogovoru</small><b>Praznovanja</b><span>Za skupine do 60 gostov s kompletno oskrbo.</span></figcaption></figure><figure><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QPaf2JbST6hkytwxQiF-TdTQGO4U5GGH58fEPsjNEhlRXsi_uN0KvCW1zWO8SjxRqmX8dZQE4nBtz7t9Gh3QNjYkrgXpmJuoqOUZzCp9jvl_aQt1M15RqMMquZ5dGTBBBSvpCo=w1000" alt="Golf, savna, kopanje" style=""><span class="st">05</span><figcaption><small>V bližini</small><b>Golf, savna, kopanje</b><span>Za aktiven oddih, nekaj minut stran.</span></figcaption></figure></div>
+  <div class="hs-bar"><i id="hbar"></i></div>
 </div></section>
 
 <section id="galerija" style="padding-top:0"><div class="w">
@@ -345,13 +380,13 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
     <p class="pr">Vinogradi, terasa, klet in sobe. Kliknite na fotografijo za večji prikaz.</p>
   </div>
   <div class="gal" id="gal">
-    <button class="s pr" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QPaf2JbST6hkytwxQiF-TdTQGO4U5GGH58fEPsjNEhlRXsi_uN0KvCW1zWO8SjxRqmX8dZQE4nBtz7t9Gh3QNjYkrgXpmJuoqOUZzCp9jvl_aQt1M15RqMMquZ5dGTBBBSvpCo"></button>
-    <button class="v pr d1" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QJUaeKRKURoVB-2fnMxuCVTq6tooXzCPVghQ9jkocRo7BNAIAgsuNYufo7VGV3W3cO0oPZCZn4IsCmpkUAQFuQs0r7KFQyiAeBc-p9cwdmmWu-IwoecNzY6uDjeWawzgah3pcpog"></button>
+    <button class="s" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QPaf2JbST6hkytwxQiF-TdTQGO4U5GGH58fEPsjNEhlRXsi_uN0KvCW1zWO8SjxRqmX8dZQE4nBtz7t9Gh3QNjYkrgXpmJuoqOUZzCp9jvl_aQt1M15RqMMquZ5dGTBBBSvpCo"></button>
+    <button class="v" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QJUaeKRKURoVB-2fnMxuCVTq6tooXzCPVghQ9jkocRo7BNAIAgsuNYufo7VGV3W3cO0oPZCZn4IsCmpkUAQFuQs0r7KFQyiAeBc-p9cwdmmWu-IwoecNzY6uDjeWawzgah3pcpog"></button>
     <button class="pr d2" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SkkLLPkQwBnGkEJARWUzOH7Y71GABi8M1tzauX7A42jslmr2Ddy-8qKG2nz-B_9S5NSCJ7vDD7oWDtxuAU8i12q8toeFyX5sQtm8RAqNTUhVATyi4W3OuOfhTWqA_StUpEY17H"></button>
-    <button class="v pr" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R7jon5d6OEnsIzmUUa3BeyPBKiWsTnYVJdhje2HdNAtWEEaktK2e393FutpEW7Vaib6gkKEgV3Wq1GAj4xHUYnnfrClqfO3jc1Y4fidpBMEbjC0vq-6ZRKgKTNHt4su5SfJc94sQ"></button>
+    <button class="v" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R7jon5d6OEnsIzmUUa3BeyPBKiWsTnYVJdhje2HdNAtWEEaktK2e393FutpEW7Vaib6gkKEgV3Wq1GAj4xHUYnnfrClqfO3jc1Y4fidpBMEbjC0vq-6ZRKgKTNHt4su5SfJc94sQ"></button>
     <button class="pr d1" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QMHr9OOeJ1kOwKaBovv4S8ASClY1ubbJF1ycaizhDTLsP4C3slP8fbe9SqLf6j_lW12Ox4SvdjstRMaGeF7hIIszrTG6cYPwZJIhttOaKIigxOj4Jhu2NgFppzaXJs_Kn30aFZ"></button>
-    <button class="s pr d2" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q3fYVPoafLiV7MMCfIN5L3GEjlPebVUhx84Tdnb5D7-Q2fjqVISAG0nlzxsFvSIMLB-IAo2E3RgbF3co-GUxBCJ4kYfJLQDPW1qZR8iXMkaI-yEwmGX7j5qNlZKTfMya6UtwCl"></button>
-    <button class="pr" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TnvyWIYORzFoXx6xE3gWGQncRvM0RG-X_umh6xb37_uRZIYDkEaIa-yM0eu232lF2uZeWQ2urHR7nBHbb7nuLsLrj6AwBQVr1e3fUe6Zu9tqsnEqvhsrqxe6_wk8JX0XTFzszovg"></button>
+    <button class="s" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q3fYVPoafLiV7MMCfIN5L3GEjlPebVUhx84Tdnb5D7-Q2fjqVISAG0nlzxsFvSIMLB-IAo2E3RgbF3co-GUxBCJ4kYfJLQDPW1qZR8iXMkaI-yEwmGX7j5qNlZKTfMya6UtwCl"></button>
+    <button  aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TnvyWIYORzFoXx6xE3gWGQncRvM0RG-X_umh6xb37_uRZIYDkEaIa-yM0eu232lF2uZeWQ2urHR7nBHbb7nuLsLrj6AwBQVr1e3fUe6Zu9tqsnEqvhsrqxe6_wk8JX0XTFzszovg"></button>
     <button class="pr d1" aria-label="Povečaj fotografijo" data-u="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R-diamsH2vAfxqB7vTghug1uXGhelwzGT-7tNr_ym5z09Bsyy3N6WEF9dHRSTVzQsA7VGSSuarkhh5CsOxF6-cY40zAUTe0pJqRatpeV7YmcxhDyv5NE83C2PdYNLksOYgR_g"></button>
   </div>
 </div></section>
@@ -406,6 +441,28 @@ document.querySelectorAll('.pr,.zav').forEach(el=>io.observe(el));
 requestAnimationFrame(()=>document.querySelectorAll('.hero .pr').forEach(e=>e.classList.add('on')));
 const px=document.getElementById('parallax');
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches){let k=false;addEventListener('scroll',()=>{if(k)return;k=true;requestAnimationFrame(()=>{const r=px.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){px.style.transform=`translateY(${(r.top+r.height/2-innerHeight/2)/innerHeight*-8}%)`}k=false})},{passive:true})}
+
+/* dinamika */
+const rmo=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const h1=document.getElementById('h1');
+(function(){let i=0;const wrap=t=>t.split(' ').filter(Boolean).map(w=>`<span class="hw"><span style="transition-delay:${.25+(i++)*.09}s">${w}</span></span>`).join(' ');
+const em=h1.querySelector('em');const first=h1.firstChild.textContent;h1.innerHTML=wrap(first)+' <em>'+wrap(em.textContent)+'</em>';})();
+requestAnimationFrame(()=>setTimeout(()=>hero.classList.add('go'),60));
+const cq=document.getElementById('cit');cq.innerHTML=cq.textContent.split(' ').map(w=>`<span class="bw">${w}</span>`).join(' ');const bws=[...cq.querySelectorAll('.bw')];
+const cnt=new IntersectionObserver(es=>es.forEach(x=>{if(!x.isIntersecting)return;cnt.unobserve(x.target);const el=x.target,n=+el.dataset.n,suf=el.dataset.s||'',t0=performance.now();const f=t=>{const p=Math.min((t-t0)/1800,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(e*n)+suf;if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}),{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(el=>cnt.observe(el));
+const vimgs=[...document.querySelectorAll('#vfoto img')],vli=[...document.querySelectorAll('.seznam li')],vst=document.getElementById('vst');let vi=0,vt;
+const setW=i=>{vi=i;vimgs.forEach((im,k)=>im.classList.toggle('act',k===i));vli.forEach((l,k)=>l.classList.toggle('act',k===i));vst.innerHTML='0'+(i+1)+'<small>'+vli[i].querySelector('b').textContent+'</small>'};
+vli.forEach((l,k)=>{l.addEventListener('mouseenter',()=>{clearInterval(vt);setW(k)});l.addEventListener('click',()=>{clearInterval(vt);setW(k)})});
+const vio=new IntersectionObserver(es=>es.forEach(x=>{clearInterval(vt);if(x.isIntersecting&&!rmo)vt=setInterval(()=>setW((vi+1)%vli.length),3200)}),{threshold:.4});vio.observe(document.getElementById('vina'));
+const prog=document.getElementById('prog'),grow=document.getElementById('grow'),hw=document.querySelector('.hs-wrap'),track=document.getElementById('track'),hbar=document.getElementById('hbar'),gb=[...document.querySelectorAll('#gal button')];
+const cl=(v,a,b)=>Math.min(b,Math.max(a,v));
+function tick(){const vh=innerHeight,de=document.documentElement;prog.style.transform=`scaleX(${scrollY/(de.scrollHeight-vh)})`;
+ const cr=cq.getBoundingClientRect();const cp=cl((vh*.85-cr.top)/(vh*.6),0,1);const nlit=Math.round(cp*bws.length);bws.forEach((w,k)=>w.classList.toggle('lit',k<nlit));
+ if(!rmo){const gr=grow.getBoundingClientRect();const gp=cl((vh-gr.top)/(vh*.9),0,1);grow.style.setProperty('--c',(14*(1-gp)).toFixed(2)+'%');
+ if(innerWidth>1000){const r=hw.getBoundingClientRect();const p=cl(-r.top/(r.height-vh),0,1);const max=track.scrollWidth-innerWidth;track.style.transform=`translate3d(${-p*max}px,0,0)`;hbar.style.transform=`scaleX(${p})`}
+ gb.forEach((b,k)=>{const r=b.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;const sp=[.07,-.05,.04,-.07][k%4];b.style.transform=`translateY(${((r.top+r.height/2-vh/2)*sp).toFixed(1)}px)`})}}
+let tk=false;addEventListener('scroll',()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{tick();tk=false})},{passive:true});addEventListener('resize',tick);tick();
 </script>
 </body>
 </html>
