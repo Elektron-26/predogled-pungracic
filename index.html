@@ -116,7 +116,6 @@ section{padding:112px 0}
 .citat .nad{justify-content:center;margin-bottom:34px}.citat .nad::after{content:"";width:34px;height:1px;background:var(--zlato)}
 
 /* kulinarika */
-#kulinarika{background:linear-gradient(180deg,var(--bg),#191510 50%,var(--bg))}
 .kul{display:grid;grid-template-columns:5fr 6fr;gap:110px;align-items:center}
 .kul .slike{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .kul .slike figure{overflow:hidden}
@@ -248,6 +247,20 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
 .hs-bar i{position:absolute;inset:0;background:var(--zlato);transform-origin:left;transform:scaleX(0)}
 @media(max-width:1000px){.hs-wrap{height:auto;padding:96px 0}.hs-stick{position:static;height:auto;gap:36px}.hs-track{overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important;scrollbar-width:none}.hs-track::-webkit-scrollbar{display:none}.hs-track figure{flex:0 0 78vw;height:auto;aspect-ratio:3/4;scroll-snap-align:center}.hs-track b{font-size:27px}.hs-bar{display:none}.vina .foto .stev{font-size:84px;left:22px}}
 
+
+/* svetli razdelki */
+.svetla{background:#F2ECE1!important;color:#2A251D;border:0!important}
+.svetla h2,.svetla h3,.svetla .meni b,.svetla .vrst span{color:#1E1A14}
+.svetla h2 em{color:#9A7634}
+.svetla p,.svetla .meni span{color:#6B6253}
+.svetla .nad{color:#9A7634}.svetla .nad::before{background:#9A7634}
+.svetla .meni li,.svetla .vrst div{border-color:rgba(30,26,20,.14)}
+.svetla .vrst div:first-child{border-top-color:#9A7634}
+.svetla .meni i{border-bottom-color:rgba(154,118,52,.45)}
+.svetla .vrst b{color:#9A7634}
+.svetla .vrst + p{color:#8A8170}
+.svetla .kul .slike figure,.svetla .sobe-g figure{box-shadow:0 30px 60px -30px rgba(30,26,20,.35)}
+
 /* gibanje */
 .pr{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
 .pr.on{opacity:1;transform:none}
@@ -326,7 +339,7 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
   </div>
 </div>
 
-<section id="kulinarika"><div class="w kul">
+<section id="kulinarika" class="svetla"><div class="w kul">
   <div>
     <div class="nad pr">Za mizo</div>
     <h2 class="pr" style="margin-top:26px">Vse, kar postrežemo, <em>pridelamo doma</em></h2>
@@ -345,7 +358,7 @@ footer .w{display:flex;justify-content:space-between;align-items:center;flex-wra
   </div>
 </div></section>
 
-<section id="sobe" class="sobe"><div class="w">
+<section id="sobe" class="sobe svetla"><div class="w">
   <div class="top2">
     <div><div class="nad pr">Prenočišča</div><h2 class="pr" style="margin-top:26px">Zbudite se <em>med trtami</em></h2></div>
     <p class="pr">Pet sob z lastnimi kopalnicami in apartma za šest oseb. Zjutraj zajtrk z domačimi dobrotami, zvečer razgled na vinograde in tišina.</p>
@@ -440,7 +453,7 @@ document.querySelectorAll('#gal button').forEach(b=>{b.style.backgroundImage=`ur
 addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelector('.lb')?.remove()});
 const t=new Date().toISOString().slice(0,10);document.getElementById('d1').min=t;document.getElementById('d2').min=t;
 document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block'};
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:0,rootMargin:'0px 0px -4% 0px'});
 document.querySelectorAll('.pr,.zav').forEach(el=>io.observe(el));
 requestAnimationFrame(()=>document.querySelectorAll('.hero .pr').forEach(e=>e.classList.add('on')));
 const px=document.getElementById('parallax');
@@ -461,7 +474,7 @@ vli.forEach((l,k)=>{l.addEventListener('mouseenter',()=>{clearInterval(vt);setW(
 const vio=new IntersectionObserver(es=>es.forEach(x=>{clearInterval(vt);if(x.isIntersecting&&!rmo)vt=setInterval(()=>setW((vi+1)%vli.length),3200)}),{threshold:.4});vio.observe(document.getElementById('vina'));
 const prog=document.getElementById('prog'),grow=document.getElementById('grow'),hw=document.querySelector('.hs-wrap'),track=document.getElementById('track'),hbar=document.getElementById('hbar'),gb=[...document.querySelectorAll('#gal button')];
 const cl=(v,a,b)=>Math.min(b,Math.max(a,v));
-function tick(){const vh=innerHeight,de=document.documentElement;prog.style.transform=`scaleX(${scrollY/(de.scrollHeight-vh)})`;
+function tick(){const vh=innerHeight,de=document.documentElement;document.querySelectorAll('.zav:not(.on),.pr:not(.on)').forEach(e=>{if(e.getBoundingClientRect().top<vh*.96)e.classList.add('on')});prog.style.transform=`scaleX(${scrollY/(de.scrollHeight-vh)})`;
  const cr=cq.getBoundingClientRect();const cp=cl((vh*.85-cr.top)/(vh*.6),0,1);const nlit=Math.round(cp*bws.length);bws.forEach((w,k)=>w.classList.toggle('lit',k<nlit));
  if(!rmo){const gr=grow.getBoundingClientRect();const gp=cl((vh-gr.top)/(vh*.9),0,1);grow.style.setProperty('--c',(14*(1-gp)).toFixed(2)+'%');
  if(innerWidth>1000){const r=hw.getBoundingClientRect();const p=cl(-r.top/(r.height-vh),0,1);const max=track.scrollWidth-innerWidth;track.style.transform=`translate3d(${-p*max}px,0,0)`;hbar.style.transform=`scaleX(${p})`}
