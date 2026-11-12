@@ -53,13 +53,13 @@ nav .btn{padding:12px 22px}
 @media(max-width:560px){nav .btn{display:none}.logo b{font-size:23px}}
 
 /* hero */
-.hero{position:relative;height:100svh;min-height:660px;max-height:1000px;overflow:hidden}
+.hero{position:relative;height:100svh;min-height:600px;max-height:1000px;overflow:hidden}
 .hero .bg{position:absolute;inset:0;background:url("https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qx3Hpmpxv48hRf04eph4yhPO9CV_k7Kbs292tjdTsrCbVpWwFE6OhgVtBiEgQNUanmlGQJ7OlEYTJK2TVSHKDh81uwgJC_iuRbja4fPJ0RPN_u1w0IsHxFergZWmHuHFxlMGxx=w2200") center 62%/cover;transform:scale(1.1);animation:zoom 18s var(--ease) forwards}
 @media(max-width:760px){.hero .bg{background-image:url("https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QfVr-QXjGvAe5k8hVT0M6p27YSkvctPx9zRJfFt8hObooOp6hFgfz6EOJnx4spTedQcY7ke5Cjh9AQs6SsfaJ_6lZ50EHw-rAPZW3orI8t-cLAbkiXfCINwwZ6ZurHlCFWQyqSUw=w1200");background-position:center 40%}}
 @keyframes zoom{to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,11,.55) 0%,rgba(14,13,11,.05) 30%,rgba(14,13,11,.25) 58%,rgba(14,13,11,.96) 100%)}
-.hero .w{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:96px}
-.hero h1{font-size:clamp(56px,10vw,150px);line-height:.92;margin:26px 0 30px;max-width:9.5ch}
+.hero .w{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:110px;padding-bottom:min(96px,11vh)}
+.hero h1{font-size:clamp(50px,min(9vw,13vh),146px);line-height:.94;margin:22px 0 26px;max-width:12ch}
 .hero .lede{font-size:clamp(17px,1.5vw,19px);max-width:40ch;color:#D6CEBF}
 .hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:42px}
 .hero .meta{position:absolute;right:max(24px,env(safe-area-inset-right));bottom:96px;z-index:2;text-align:right;font-size:11px;letter-spacing:.26em;text-transform:uppercase;line-height:2.3;color:var(--sivo)}
@@ -67,7 +67,7 @@ nav .btn{padding:12px 22px}
 .skrol{position:absolute;left:50%;bottom:26px;z-index:2;width:1px;height:52px;overflow:hidden;background:rgba(237,230,216,.15)}
 .skrol::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--zlato);animation:sk 2.4s var(--ease) infinite}
 @keyframes sk{to{top:100%}}
-@media(max-width:860px){.hero .meta{display:none}.hero .w{padding-bottom:130px}.hero .cta .btn:not(.btn-z){display:none}}
+@media(max-width:860px){.hero .meta{display:none}.hero .w{padding-bottom:110px}.hero .cta{display:none}}
 
 section{padding:150px 0}
 @media(max-width:860px){section{padding:96px 0}}
